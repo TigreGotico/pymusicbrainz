@@ -1,0 +1,10 @@
+# pymusicbrainz docs
+
+- [quickstart.md](quickstart.md) — install and first calls.
+- [webservice.md](webservice.md) — lookup / search / browse over `ws/2`.
+- [bulk-dumps.md](bulk-dumps.md) — streaming the full data dumps.
+- [models.md](models.md) — the typed entity dataclasses.
+- [ids.md](ids.md) — MBID anchor and `ExternalIds.extra` bridge.
+- [dataset.md](dataset.md) — Hugging Face streaming configs + `export_jsonl`.
+
+Provenance and licensing: see [`../PROVENANCE.md`](../PROVENANCE.md).

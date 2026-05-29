@@ -1,0 +1,24 @@
+{
+  "created": "2026-05-29T23:22:16.731Z",
+  "count": 93,
+  "offset": 0,
+  "artists": [
+    {
+      "id": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+      "type": "Group",
+      "score": 100,
+      "name": "Nirvana",
+      "sort-name": "Nirvana",
+      "country": "US"
+    },
+    {
+      "id": "9282c8b4-ca0b-4c6b-b7e3-4f7762dfc4d6",
+      "type": "Group",
+      "score": 84,
+      "name": "Nirvana",
+      "sort-name": "Nirvana",
+      "country": "GB",
+      "disambiguation": "60s band from the UK"
+    }
+  ]
+}
