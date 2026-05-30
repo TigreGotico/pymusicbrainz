@@ -59,10 +59,10 @@ The archive is cached under `~/.cache/pymusicbrainz` (override with
 `PYMUSICBRAINZ_CACHE_DIR`). Pass `url=` to stream over HTTP without a full
 download, `path=` to read a local `.tar.bz2`, or `limit=N` to sample.
 
-## metadatarr / `ExternalIds.extra`
+## External IDs
 
-`pymusicbrainz.ids` flattens any entity into a metadatarr `extra` dict anchored
-on `musicbrainz_id`:
+`pymusicbrainz.ids` flattens any entity into a flat dict of namespaced external
+IDs, anchored on `musicbrainz_id`:
 
 ```python
 extra = mb.to_extra(artist)

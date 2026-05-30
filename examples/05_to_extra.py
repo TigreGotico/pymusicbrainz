@@ -1,6 +1,6 @@
-"""Flatten an entity into a metadatarr ExternalIds.extra dict.
+"""Flatten an entity into a flat dict of namespaced external IDs.
 
-Every extra is anchored on ``musicbrainz_id`` (the MBID) — the canonical music
+Every dict is anchored on ``musicbrainz_id`` (the MBID) — the canonical music
 cross-reference key.
 """
 import json

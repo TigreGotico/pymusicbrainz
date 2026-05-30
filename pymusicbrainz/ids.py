@@ -1,17 +1,11 @@
-"""Converters from pymusicbrainz models to ``ExternalIds.extra`` dicts.
+"""Converters from pymusicbrainz models to flat ``str -> str`` dicts of namespaced external IDs.
 
-Consumed by the metadatarr provider and any integration that serialises
-MusicBrainz data into the mediavocab ``ExternalIds.extra`` key-space.
-
-The headline key is the canonical **``musicbrainz_id``** (the MBID). MusicBrainz
-is the dominant music cross-reference anchor: nearly every other music source
-(Discogs, Spotify, Wikidata, ISRC/ISWC registries, …) carries an MBID, so a
-clean ``musicbrainz_id`` lets metadatarr fan a single pymusicbrainz hit out to
-the rest of the graph. A per-entity key is also emitted (``musicbrainz_artist_id``,
-``musicbrainz_release_id``, …) so callers can tell entity types apart.
-
-All values are strings (or JSON-encoded arrays), as required by the flat
-``extra`` key-space.
+The canonical anchor key is ``musicbrainz_id`` (the MBID); because nearly every
+other music source (Discogs, Spotify, Wikidata, ISRC/ISWC registries, …) carries
+an MBID, a clean ``musicbrainz_id`` lets a consumer cross-reference a single hit
+out to the rest of the graph. Per-entity keys (``musicbrainz_artist_id``,
+``musicbrainz_release_id``, …) disambiguate entity types. Values are strings or
+JSON-encoded arrays so the dict stays flat.
 """
 from __future__ import annotations
 

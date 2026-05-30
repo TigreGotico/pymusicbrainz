@@ -3,8 +3,8 @@
 Python metadata client for MusicBrainz. Two no-key paths: the web service
 (`musicbrainz.org/ws/2`, JSON, descriptive User-Agent + 1 req/sec) and the full
 data dumps (`data.metabrainz.org/.../fullexport`, streaming `.tar.bz2`). Every
-entity is MBID-anchored; `pymusicbrainz.ids` emits the canonical
-`musicbrainz_id` for metadatarr.
+entity is MBID-anchored; `pymusicbrainz.ids` converts any entity model to a flat
+dict of namespaced external IDs, anchored on `musicbrainz_id`.
 
 ## Setup
 
@@ -45,7 +45,7 @@ TSV members exercising the exact bz2 → tar → row pipeline.
   `stream_<entity>`; `download`, `latest_snapshot`, `archive_url`. Streams
   bz2 → tar (`r|`) → line, never loading a table whole; `limit=`, `url=`, `path=`.
 - `pymusicbrainz/ids.py` — `to_extra` / `<entity>_to_extra` / `canonical_mbid`:
-  bridge a model into the metadatarr `ExternalIds.extra` dict, anchored on
+  converts a model to a flat dict of namespaced external IDs, anchored on
   `musicbrainz_id` (keys namespaced `musicbrainz_`).
 - `pymusicbrainz/dataset.py` — HF-style configs (one per entity) over the API
   (`query=`/browse link) or dumps (`source="dump"`); `rows`, `export_jsonl`,

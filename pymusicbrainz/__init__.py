@@ -9,8 +9,8 @@ Two no-key data paths, both MBID-anchored:
 - :mod:`pymusicbrainz.bulk` — the **full data dumps** (the bulk backbone):
   streaming, memory-safe parsing of the ``.tar.bz2`` PostgreSQL ``COPY`` tables.
 
-:mod:`pymusicbrainz.ids` emits the canonical ``musicbrainz_id`` (MBID) anchor
-for metadatarr.
+:mod:`pymusicbrainz.ids` converts any entity model to a flat dict of namespaced
+external IDs, anchored on the canonical ``musicbrainz_id`` (MBID).
 """
 from pymusicbrainz.version import __version__
 from pymusicbrainz.models import (
@@ -106,7 +106,7 @@ __all__ = [
     "stream_labels",
     "stream_release_groups",
     "stream_works",
-    # ids / metadatarr
+    # ids
     "ids",
     "ANCHOR_KEY",
     "canonical_mbid",

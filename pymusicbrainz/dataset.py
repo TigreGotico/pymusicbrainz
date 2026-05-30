@@ -20,8 +20,7 @@ config            entity                   anchor
 ``works``         work                     ``musicbrainz_id`` (MBID)
 ================  =======================  ==============================
 
-Every row carries ``musicbrainz_id`` so the configs join cleanly and stay
-anchored to metadatarr's dominant-ID chain.
+Every row carries ``musicbrainz_id`` so the configs join cleanly across entities.
 
 PROVENANCE: MusicBrainz core data is public domain (CC0); derived data is
 CC-BY-NC-SA. See ``PROVENANCE.md`` and ``docs/dataset.md``.

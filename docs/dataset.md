@@ -1,10 +1,9 @@
 # Hugging Face datasets
 
-`pymusicbrainz.dataset` flattens MusicBrainz entities into tabular,
-`extra`-shaped rows — one HF dataset **config** per core entity. Every config
-streams (never materialises a whole source in memory) and every row carries
-`musicbrainz_id`, so configs join cleanly and stay anchored to metadatarr's
-dominant-ID chain.
+`pymusicbrainz.dataset` flattens MusicBrainz entities into tabular rows — one
+HF dataset **config** per core entity. Every config streams (never materialises
+a whole source in memory) and every row carries `musicbrainz_id`, so configs
+join cleanly across entities.
 
 > ## Provenance & licence (read this first)
 >

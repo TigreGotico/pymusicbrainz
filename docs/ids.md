@@ -1,10 +1,10 @@
-# IDs & the metadatarr bridge
+# IDs
 
 The **MBID** (a UUID) is MusicBrainz's identifier for every entity, and the
 dominant cross-reference anchor in music metadata: Discogs, Spotify, Wikidata,
-ISRC/ISWC registries and others all carry an MBID. `pymusicbrainz.ids` bridges
-a model into the mediavocab `ExternalIds.extra` key-space used by metadatarr,
-anchored on `musicbrainz_id`.
+ISRC/ISWC registries and others all carry an MBID. `pymusicbrainz.ids` converts
+any entity model to a flat dict of namespaced external IDs, anchored on
+`musicbrainz_id`.
 
 ## Canonicalising
 
