@@ -22,7 +22,7 @@ dependencies = [
 
 [project.optional-dependencies]
 anon = ["anon_requests"]
-stealth = ["curl-cffi"]
+cffi = ["curl-cffi"]
 test = ["pytest"]
 
 [project.urls]

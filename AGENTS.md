@@ -10,7 +10,7 @@ dict of namespaced external IDs, anchored on `musicbrainz_id`.
 
 ```bash
 pip install -e .
-pip install -e ".[stealth]"   # adds curl-cffi transport
+pip install -e ".[cffi]"      # adds curl-cffi transport
 pip install -e ".[test]"      # adds pytest
 ```
 

@@ -12,8 +12,8 @@ Two live data paths share one transport layer:
   member-by-member by :mod:`pymusicbrainz.bulk`.
 
 The session is an :class:`unblock_requests.CloudflareSession` when that package
-is installed (anti-bot transport: TLS impersonation, optional Wayback
-fallback), falling back to ``curl_cffi`` and then plain ``requests``.
+is installed (resilient transport with Wayback fallback), falling back to
+``curl_cffi`` and then plain ``requests``.
 Environment knobs use the ``PYMUSICBRAINZ`` prefix.
 """
 from __future__ import annotations
