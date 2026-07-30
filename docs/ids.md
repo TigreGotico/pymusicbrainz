@@ -1,12 +1,11 @@
 # IDs
 
-The **MBID** (a UUID) is MusicBrainz's identifier for every entity, and the
-dominant cross-reference anchor in music metadata: Discogs, Spotify, Wikidata,
-ISRC/ISWC registries and others all carry an MBID. `pymusicbrainz.ids` converts
-any entity model to a flat dict of namespaced external IDs, anchored on
-`musicbrainz_id`.
+The **MBID** (a UUID) is MusicBrainz's identifier for every entity, and the dominant
+cross-reference anchor in music metadata: Discogs, Spotify, Wikidata, and the
+ISRC/ISWC registries all carry an MBID. `pymusicbrainz.ids` converts any entity model
+to a flat dict of namespaced external IDs, anchored on `musicbrainz_id`.
 
-## Canonicalising
+## Canonicalizing
 
 ```python
 import pymusicbrainz as mb
@@ -36,8 +35,11 @@ extra = mb.to_extra(artist)
 
 ## Key namespace
 
-- `musicbrainz_id` — the canonical MBID anchor, emitted for every entity.
-- `musicbrainz_<entity>_id` — disambiguates the entity type in a flat dict
-  (`entity_key(EntityType.WORK)` → `"musicbrainz_work_id"`).
-- All values are strings; list-valued fields (ISNI, ISRC, ISWC, secondary
-  types, artist credits) are JSON-encoded arrays.
+- `musicbrainz_id`: the canonical MBID anchor, emitted for every entity.
+- `musicbrainz_<entity>_id`: disambiguates the entity type in a flat dict
+  (`entity_key(EntityType.WORK)` returns `"musicbrainz_work_id"`).
+- All values are strings. List-valued fields (ISNI, ISRC, ISWC, secondary types,
+  artist credits) are JSON-encoded arrays.
+
+---
+[← Models](models.md) · [Home](README.md) · [Hugging Face datasets →](dataset.md)

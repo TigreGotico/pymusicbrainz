@@ -4,8 +4,8 @@
 pip install -e .
 ```
 
-MusicBrainz requires every client to send a descriptive `User-Agent` and to
-make at most one request per second. Both are handled for you, but set your own
+MusicBrainz requires every client to send a descriptive `User-Agent` and to make at
+most one request per second. The client handles both, but set your own
 identification:
 
 ```python
@@ -22,8 +22,8 @@ print(artist.name, artist.type, artist.country)     # Nirvana Group US
 print(artist.begin_date, "->", artist.end_date)     # 1987 -> 1994-04-05
 ```
 
-`get_release`, `get_recording`, `get_release_group`, `get_label`, `get_work`
-work the same way. Or the generic form:
+`get_release`, `get_recording`, `get_release_group`, `get_label`, and `get_work` work
+the same way. You can also use the generic form:
 
 ```python
 work = mb.lookup("work", "<mbid>")
@@ -47,12 +47,15 @@ for rg in mb.iter_browse("release-group", artist=artist.mbid, max_results=20):
 
 ## Rate limiting
 
-The default throttle is 1.1 s between requests. Do **not** set it below 1.0 s
+The default throttle is 1.1 seconds between requests. Do not set it below 1.0 second
 against the live web service:
 
 ```python
 mb.set_delay(1.0)    # the floor for the live service
 ```
 
-For the whole-corpus path (no per-request limit), see
+For the whole-corpus path, which has no per-request limit, see
 [bulk-dumps.md](bulk-dumps.md).
+
+---
+[Home](README.md) · [Web service →](webservice.md)
