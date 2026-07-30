@@ -1,13 +1,16 @@
 # Models
 
-`pymusicbrainz.models` holds one typed dataclass per core entity. Every model
-carries the canonical `mbid` (the MBID) — the cross-reference anchor consumed by
-[`ids.py`](ids.md). Each has a `to_dict()` and a `from_api(data)` classmethod,
-and a `url` property pointing at musicbrainz.org. Fields are populated from the
+`pymusicbrainz.models` holds one typed dataclass per core entity. Every model carries
+the canonical `mbid` (the MBID), the cross-reference anchor used by
+[`ids.py`](ids.md).
+
+Each model has a `to_dict()` method, a `from_api(data)` classmethod, and a `url`
+property that points at the MusicBrainz site. Fields are populated from the
 web-service JSON, which shares MusicBrainz's vocabulary with the dumps.
 
 `EntityType` enumerates the six kinds (`artist`, `release`, `recording`,
-`release-group`, `label`, `work`); `model_for(EntityType)` returns the class.
+`release-group`, `label`, `work`). `model_for(EntityType)` returns the matching
+class.
 
 | model | key fields |
 | --- | --- |
@@ -28,8 +31,8 @@ print(rec.to_dict())
 
 ## SearchResult
 
-`search` and `browse` return a `SearchResult`: iterable over typed entities,
-with `count` (server total), `offset`, `entity_type`, and `has_more`.
+`search` and `browse` return a `SearchResult`: an iterable over typed entities, with
+`count` (the server total), `offset`, `entity_type`, and `has_more`.
 
 ```python
 res = mb.search("label", "DGC")
@@ -37,3 +40,6 @@ print(len(res), res.count, res.has_more)
 for label in res:
     print(label.mbid, label.name)
 ```
+
+---
+[← Bulk dumps](bulk-dumps.md) · [Home](README.md) · [IDs →](ids.md)
