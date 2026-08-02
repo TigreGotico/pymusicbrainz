@@ -80,14 +80,14 @@ API (`query=`/browse link) or the dumps (`source="dump"`). See
 ## Related projects
 
 `pymusicbrainz` is one of a set of metadata clients maintained by
-[TigreGotico](https://github.com/TigreGotico):
+[LeMetadatarr](https://github.com/LeMetadatarr):
 
-- [pydiscogs](https://github.com/TigreGotico/pydiscogs): a client for the Discogs
+- [pydiscogs](https://github.com/LeMetadatarr/pydiscogs): a client for the Discogs
   database.
-- [pyimdb](https://github.com/TigreGotico/pyimdb): a client for IMDb data.
-- [pyrateyourmusic](https://github.com/TigreGotico/pyrateyourmusic): a client for
+- [pyimdb](https://github.com/LeMetadatarr/pyimdb): a client for IMDb data.
+- [pyrateyourmusic](https://github.com/LeMetadatarr/pyrateyourmusic): a client for
   Rate Your Music data.
-- [pyvndb](https://github.com/TigreGotico/pyvndb): a client for the Visual Novel
+- [pyvndb](https://github.com/LeMetadatarr/pyvndb): a client for the Visual Novel
   Database.
 
 ## Provenance
