@@ -43,23 +43,26 @@ def to_int(value: object) -> Optional[int]:
         return int(m.group()) if m else None
 
 
+_TSV_ESCAPES = {"t": "\t", "n": "\n", "r": "\r", "\\": "\\"}
+_TSV_ESCAPE_RE = re.compile(r"\\(.)")
+
+
 def tsv_value(value: object) -> Optional[str]:
     """Decode one Postgres COPY cell: ``\\N`` → ``None``, else the string.
 
-    MusicBrainz dump TSV uses ``\\N`` for NULL and escapes tabs/newlines as
-    ``\\t``/``\\n``; this unescapes the common ones.
+    MusicBrainz dump TSV uses ``\\N`` for NULL and escapes tabs/newlines/
+    backslashes as ``\\t``/``\\n``/``\\r``/``\\\\``. Escapes are resolved in a
+    single left-to-right pass (not sequential ``str.replace`` calls, which
+    would mis-decode an escaped backslash immediately followed by a literal
+    ``t``/``n``/``r`` — e.g. ``\\\\t`` for the literal two characters
+    ``\\`` + ``t`` — into a tab).
     """
     if value is None:
         return None
     s = str(value)
     if s == "\\N" or s == "":
         return None
-    return (
-        s.replace("\\t", "\t")
-        .replace("\\n", "\n")
-        .replace("\\r", "\r")
-        .replace("\\\\", "\\")
-    )
+    return _TSV_ESCAPE_RE.sub(lambda m: _TSV_ESCAPES.get(m.group(1), m.group(0)), s)
 
 
 def is_mbid(value: Optional[str]) -> bool:

@@ -29,7 +29,7 @@ ENV_PREFIX = "PYMUSICBRAINZ"
 # MusicBrainz mandates a descriptive User-Agent identifying the application and
 # a way to contact the author. Override with set_user_agent().
 _user_agent = (
-    "pymusicbrainz/0.0.1 ( https://github.com/TigreGotico/pymusicbrainz ; "
+    "pymusicbrainz/0.0.1 ( https://github.com/LeMetadatarr/pymusicbrainz ; "
     "jarbasai@mailfence.com )"
 )
 
